@@ -1,0 +1,26 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <br>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre Fiesta</th>
+        <th scope="col">Descripción Fiesta</th>
+        <th scope="col">Fecha Fiesta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fiestas of fiesta">
+        <th scope="row">{{fiesta.idFiestas}}</th>
+        <td>{{fiesta.Nombre_Fiestas}}</td>
+        <td>{{fiesta.Descripcion_Fiesta}}</td>
+        <td>{{fiesta.Fecha_Inico}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
