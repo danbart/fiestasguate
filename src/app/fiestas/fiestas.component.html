@@ -13,14 +13,15 @@
         <th scope="col">Fecha Fiesta</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let fiestas of fiesta">
+    <tbody *ngIf='fiestas'>
+      <tr *ngFor="let fiesta of fiestas">
         <th scope="row">{{fiesta.idFiestas}}</th>
         <td>{{fiesta.Nombre_Fiestas}}</td>
         <td>{{fiesta.Descripcion_Fiesta}}</td>
         <td>{{fiesta.Fecha_Inico}}</td>
       </tr>
     </tbody>
+    <span *ngIf='!fiestas' tyle="text-align:center">cargarndo datos....</span>
   </table>
 
 </div>
