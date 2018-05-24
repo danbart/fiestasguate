@@ -14,8 +14,8 @@
       <tr>
         <th scope="col">Fiesta</th>
         <th scope="col">Municipio</th>
-        <th scope="col">Departamento</th>
-        <th scope="col">Fecha Fiesta</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">IMG</th>
       </tr>
     </thead>
     <tbody *ngIf='comunfiesta'>
@@ -23,7 +23,7 @@
         <th scope="row">{{comunid.Fiesta}}</th>
         <td>{{comunid.Comunidad}}</td>
         <td>{{comunid.Descripcion}}</td>
-        <td><img src="{{comunid.img}}" alt="Smiley face" height="50" width="50"></td>
+        <td><img onclick="javascript:this.width=450;this.height=338" ondblclick="javascript:this.width=50;this.height=50" src="{{comunid.img}}" alt="Smiley face" height="50" width="50"></td>
       </tr>
     </tbody>
   </table>

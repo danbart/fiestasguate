@@ -12,7 +12,8 @@ import { map } from 'rxjs/operators';
 export class PeticionesService{
   public url: string;
   constructor(public _http:Http){
-    this.url ="http://localhost/FiestasAPI/";
+    // this.url ="http://localhost/FiestasAPI/";
+    this.url ="http://www.softanddrink.xyz/apifiestas/index.php/";
   }
    getPrueba(){
      return "Hola Mundo desde el Servicio";

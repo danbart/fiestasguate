@@ -14,7 +14,7 @@
         <th scope="col">Fiesta</th>
         <th scope="col">Municipio</th>
         <th scope="col">Departamento</th>
-        <th scope="col">Fecha Fiesta</th>
+        <th scope="col">IMG</th>
       </tr>
     </thead>
     <tbody *ngIf='depafiesta'>
@@ -22,7 +22,7 @@
         <th scope="row">{{depaf.Fiesta}}</th>
         <td>{{depaf.Comunidad}}</td>
         <td>{{depaf.Departamento}}</td>
-        <td><img src="{{depaf.img}}" alt="Smiley face" height="50" width="50"></td>
+        <td><img onclick="javascript:this.width=450;this.height=338" ondblclick="javascript:this.width=50;this.height=50" src="{{depaf.img}}" alt="Smiley face" height="50" width="50"></td>
       </tr>
     </tbody>
   </table>
