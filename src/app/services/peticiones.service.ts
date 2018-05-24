@@ -23,5 +23,21 @@ export class PeticionesService{
      return this._http.get(this.url+'fiestas')
                       .pipe(map(res => res.json()));
    }
+   getComunidades(){
+     return this._http.get(this.url+'comunidades')
+                      .pipe(map(res => res.json()));
+   }
+   getDepartamento(){
+     return this._http.get(this.url+'departamentos')
+                      .pipe(map(res => res.json()));
+   }
+   getHoy(){
+     return this._http.get(this.url+'fiestashoy')
+                      .pipe(map(res => res.json()));
+   }
+   getMes(){
+     return this._http.get(this.url+'fiestasmes')
+                      .pipe(map(res => res.json()));
+   }
 
 }
