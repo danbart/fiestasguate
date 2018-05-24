@@ -2,4 +2,41 @@
   <h1>
     {{ title }}
   </h1>
+  <br>
+  <select class="form-control" (change)="cambiarMes($event.target.value)" ng-model="mesfecha">
+     <option>Seleccione un mes</option>
+     <option value="2018-01-01">Enero</option>
+     <option value="2018-02-01">Febrero</option>
+     <option value="2018-03-01">Marzo</option>
+     <option value="2018-04-01">Abril</option>
+     <option value="2018-05-01">Mayo</option>
+     <option value="2018-06-01">Junio</option>
+     <option value="2018-07-01">Julio</option>
+     <option value="2018-08-01">Agosto</option>
+     <option value="2018-09-01">Septiembre</option>
+     <option value="2018-10-01">Octubre</option>
+     <option value="2018-11-01">Noviembre</option>
+     <option value="2018-12-01">Diciembre</option>
+    </select>
+  <br>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Fecha</th>
+        <th scope="col">Nombre Fiesta</th>
+        <th scope="col">Comunidad</th>
+        <th scope="col">IMG</th>
+      </tr>
+    </thead>
+    <tbody *ngIf='fiestas'>
+      <tr *ngFor="let fiesta of fiestas">
+        <th scope="row">{{fiesta.Fiesta}}</th>
+        <td>{{fiesta.Nombre_Fiestas}}</td>
+        <td>{{fiesta.Comunidad}}</td>
+        <td><img src="{{fiesta.img}}" alt="Smiley face" height="50" width="50"></td>
+      </tr>
+    </tbody>
+    <span *ngIf='!fiestas' tyle="text-align:center">cargarndo datos....</span>
+  </table>
 </div>

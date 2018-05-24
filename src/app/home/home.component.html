@@ -2,4 +2,28 @@
   <h1>
     {{ title }}
   </h1>
+  <br>
+  <div class="form-control">
+    <input type="text" class="form-control" placeholder="Busque Fiesta" value="">
+  </div>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre Fiesta</th>
+        <th scope="col">Descripción Fiesta</th>
+        <th scope="col">Fecha Fiesta</th>
+      </tr>
+    </thead>
+    <tbody *ngIf='fiestas'>
+      <tr *ngFor="let fiesta of fiestas">
+        <th scope="row">{{fiesta.idFiestas}}</th>
+        <td>{{fiesta.Nombre_Fiestas}}</td>
+        <td>{{fiesta.Descripcion_Fiesta}}</td>
+        <td>{{fiesta.Fecha_Inico}}</td>
+      </tr>
+    </tbody>
+    <span *ngIf='!fiestas' tyle="text-align:center">cargarndo datos....</span>
+  </table>
 </div>

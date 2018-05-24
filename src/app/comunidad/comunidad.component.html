@@ -2,4 +2,30 @@
   <h1>
     {{ title }}
   </h1>
+  <br>
+  <select class="form-control" (change)="cambiarComunidad($event.target.value)" ng-model="mesfecha">
+     <option>Seleccione una Comunidad</option>
+     <option  *ngFor="let fiesta of fiestas" value="{{fiesta.idComunidades}}">{{fiesta.Nombre_Comunidad}}</option>
+    </select>
+  <br>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Fiesta</th>
+        <th scope="col">Municipio</th>
+        <th scope="col">Departamento</th>
+        <th scope="col">Fecha Fiesta</th>
+      </tr>
+    </thead>
+    <tbody *ngIf='comunfiesta'>
+      <tr *ngFor="let comunid of comunfiesta">
+        <th scope="row">{{comunid.Fiesta}}</th>
+        <td>{{comunid.Comunidad}}</td>
+        <td>{{comunid.Descripcion}}</td>
+        <td><img src="{{comunid.img}}" alt="Smiley face" height="50" width="50"></td>
+      </tr>
+    </tbody>
+  </table>
+  <span *ngIf='!comunfiesta' tyle="text-align:center">cargarndo datos....</span>
 </div>

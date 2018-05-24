@@ -10,6 +10,7 @@ import { PeticionesService } from '../services/peticiones.service';
 export class DepartamentosComponent {
   title = 'Fiestas patronales por departamentos de Guatemala';
   public fiestas;
+  public depafiesta;
 
     constructor(
       private _peticionesService: PeticionesService
@@ -20,6 +21,32 @@ export class DepartamentosComponent {
         result => {
           this.fiestas = result;
           if(!this.fiestas){
+            console.log('Error en el Servicio');
+          }
+        },
+        error => {
+          var errorMessage = <any>error;
+          console.log(errorMessage);
+        }
+     );
+     this._peticionesService.getUnDepartamentoFiesta(1).subscribe(
+       result => {
+         this.depafiesta = result;
+         if(!this.depafiesta){
+           console.log('Error en el Servicio');
+         }
+       },
+       error => {
+         var errorMessage = <any>error;
+         console.log(errorMessage);
+       }
+    );
+    }
+    cambiarDepartamento(id){
+      this._peticionesService.getUnDepartamentoFiesta(id).subscribe(
+        result => {
+          this.depafiesta = result;
+          if(!this.depafiesta){
             console.log('Error en el Servicio');
           }
         },

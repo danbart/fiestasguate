@@ -27,8 +27,24 @@ export class PeticionesService{
      return this._http.get(this.url+'comunidades')
                       .pipe(map(res => res.json()));
    }
+   getComunidadesFiestas(){
+     return this._http.get(this.url+'comunidadfiesta')
+                      .pipe(map(res => res.json()));
+   }
+   getUnComunidadesFiestas(id){
+     return this._http.get(this.url+'comunidadfiesta/'+id)
+                      .pipe(map(res => res.json()));
+   }
    getDepartamento(){
      return this._http.get(this.url+'departamentos')
+                      .pipe(map(res => res.json()));
+   }
+   getDepartamentoFiesta(){
+     return this._http.get(this.url+'departamentofiestas')
+                      .pipe(map(res => res.json()));
+   }
+   getUnDepartamentoFiesta(id){
+     return this._http.get(this.url+'departamentofiestas/'+id)
                       .pipe(map(res => res.json()));
    }
    getHoy(){
@@ -39,5 +55,8 @@ export class PeticionesService{
      return this._http.get(this.url+'fiestasmes')
                       .pipe(map(res => res.json()));
    }
-
+   getUnMes(date){
+     return this._http.get(this.url+'fiestasmes/'+date)
+                      .pipe(map(res => res.json()));
+   }
 }

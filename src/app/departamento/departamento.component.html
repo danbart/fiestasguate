@@ -2,4 +2,30 @@
   <h1>
     {{ title }}
   </h1>
+  <br>
+  <select class="form-control" (change)="cambiarDepartamento($event.target.value)" ng-model="mesfecha">
+     <option>Seleccione un Departamento</option>
+     <option  *ngFor="let fiesta of fiestas" value="{{fiesta.idDepartamentos}}">{{fiesta.Nombre_Deptos}}</option>
+    </select>
+  <br>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Fiesta</th>
+        <th scope="col">Municipio</th>
+        <th scope="col">Departamento</th>
+        <th scope="col">Fecha Fiesta</th>
+      </tr>
+    </thead>
+    <tbody *ngIf='depafiesta'>
+      <tr *ngFor="let depaf of depafiesta">
+        <th scope="row">{{depaf.Fiesta}}</th>
+        <td>{{depaf.Comunidad}}</td>
+        <td>{{depaf.Departamento}}</td>
+        <td><img src="{{depaf.img}}" alt="Smiley face" height="50" width="50"></td>
+      </tr>
+    </tbody>
+  </table>
+  <span *ngIf='!depafiesta' tyle="text-align:center">cargarndo datos....</span>
 </div>

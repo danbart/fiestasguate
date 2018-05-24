@@ -28,4 +28,19 @@ export class FiestaMesComponent {
         }
      );
     }
+
+    cambiarMes(fecha){
+      this._peticionesService.getUnMes(fecha).subscribe(
+        result => {
+          this.fiestas = result;
+          if(!this.fiestas){
+            console.log('Error en el Servicio');
+          }
+        },
+        error => {
+          var errorMessage = <any>error;
+          console.log(errorMessage);
+        }
+     );
+    }
 }
