@@ -4,26 +4,28 @@
   </h1>
   <br>
   <div class="form-control">
-    <input type="text" class="form-control" placeholder="Busque Fiesta" value="">
+    <input type="text" class="form-control" placeholder="Busque Fiesta"  (input)="search($event.target.value)" >
   </div>
   <br>
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre Fiesta</th>
+        <th scope="col">Fiesta</th>
         <th scope="col">Descripción Fiesta</th>
-        <th scope="col">Fecha Fiesta</th>
+        <th scope="col">Departamento</th>
+        <th scope="col">Comunidad</th>
+        <th scope="col">Img</th>
       </tr>
     </thead>
     <tbody *ngIf='fiestas'>
       <tr *ngFor="let fiesta of fiestas">
-        <th scope="row">{{fiesta.idFiestas}}</th>
-        <td>{{fiesta.Nombre_Fiestas}}</td>
-        <td>{{fiesta.Descripcion_Fiesta}}</td>
-        <td>{{fiesta.Fecha_Inico}}</td>
+        <th scope="row">{{fiesta.Fiesta}}</th>
+        <td>{{fiesta.Descripcion}}</td>
+        <td>{{fiesta.Comunidad}}</td>
+        <td>{{fiesta.Departamento}}</td>
+        <td><img src="{{fiesta.img}}" alt="Smiley face" height="50" width="50"></td>
       </tr>
     </tbody>
-    <span *ngIf='!fiestas' tyle="text-align:center">cargarndo datos....</span>
   </table>
+  <span *ngIf='!fiestas' tyle="text-align:center">cargarndo datos....</span>
 </div>

@@ -4,7 +4,6 @@
   </h1>
   <br>
   <select class="form-control" (change)="cambiarDepartamento($event.target.value)" ng-model="mesfecha">
-     <option>Seleccione un Departamento</option>
      <option  *ngFor="let fiesta of fiestas" value="{{fiesta.idDepartamentos}}">{{fiesta.Nombre_Deptos}}</option>
     </select>
   <br>

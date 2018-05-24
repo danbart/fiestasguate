@@ -29,4 +29,18 @@ export class FiestasComponent{
         }
      );
     }
+    search(dato){
+      this._peticionesService.getSearch(dato).subscribe(
+        result => {
+          this.fiestas = result;
+          if(!this.fiestas){
+            console.log('Error en el Servicio');
+          }
+        },
+        error => {
+          var errorMessage = <any>error;
+          console.log(errorMessage);
+        }
+     );
+    }
 }

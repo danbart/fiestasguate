@@ -59,4 +59,8 @@ export class PeticionesService{
      return this._http.get(this.url+'fiestasmes/'+date)
                       .pipe(map(res => res.json()));
    }
+   getSearch(data){
+     return this._http.get(this.url+'search/'+data)
+                      .pipe(map(res => res.json()));
+   }
 }
