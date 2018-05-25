@@ -4,28 +4,28 @@
   </h1>
   <br>
   <div class="form-control">
-    <input type="text" class="form-control" placeholder="Busque Fiesta"  (input)="search($event.target.value)" >
+    <input type="text" class="form-control" placeholder="Busqueda de Fiestas Patronales"  (input)="search($event.target.value)" >
   </div>
   <br>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Fiesta</th>
-        <th scope="col">Descripción Fiesta</th>
-        <th scope="col">Departamento</th>
-        <th scope="col">Comunidad</th>
-        <th scope="col">Img</th>
-      </tr>
-    </thead>
-    <tbody *ngIf='fiestas'>
-      <tr *ngFor="let fiesta of fiestas">
-        <th scope="row">{{fiesta.Fiesta}}</th>
-        <td>{{fiesta.Descripcion}}</td>
-        <td>{{fiesta.Comunidad}}</td>
-        <td>{{fiesta.Departamento}}</td>
-        <td><img src="{{fiesta.img}}" alt="Smiley face" height="50" width="50"></td>
-      </tr>
-    </tbody>
-  </table>
-  <span *ngIf='!fiestas' tyle="text-align:center">cargarndo datos....</span>
+<div class="col-md-12">
+  <div class="row col-md-11" *ngIf='fiestas'>
+    <div class="col-xs-6 col-md-4" *ngFor="let fiesta of fiestas">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{fiesta.img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{fiesta.Comunidad}}</h5>
+          <p class="card-text">{{fiesta.Descripcion}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{fiesta.Fiesta}}</li>
+          <li class="list-group-item">{{fiesta.Comunidad}}</li>
+          <li class="list-group-item">{{fiesta.Departamento}}</li>
+        </ul>
+      </div>
+        <br>
+    </div>
+      <br>
+    </div>
+  </div>
+  <span *ngIf='!fiestas' style="text-align:center">cargando datos....</span>
 </div>

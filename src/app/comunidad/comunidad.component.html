@@ -3,29 +3,33 @@
     {{ title }}
   </h1>
   <br>
+  <div class="form-control">    
   <select class="form-control" (change)="cambiarComunidad($event.target.value)" ng-model="mesfecha">
      <option>Seleccione una Comunidad</option>
      <option  *ngFor="let fiesta of fiestas" value="{{fiesta.idComunidades}}">{{fiesta.Nombre_Comunidad}}</option>
     </select>
+  </div>
   <br>
   <br>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Fiesta</th>
-        <th scope="col">Municipio</th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">IMG</th>
-      </tr>
-    </thead>
-    <tbody *ngIf='comunfiesta'>
-      <tr *ngFor="let comunid of comunfiesta">
-        <th scope="row">{{comunid.Fiesta}}</th>
-        <td>{{comunid.Comunidad}}</td>
-        <td>{{comunid.Descripcion}}</td>
-        <td><img onclick="javascript:this.width=450;this.height=338" ondblclick="javascript:this.width=50;this.height=50" src="{{comunid.img}}" alt="Smiley face" height="50" width="50"></td>
-      </tr>
-    </tbody>
-  </table>
-  <span *ngIf='!comunfiesta' tyle="text-align:center">cargarndo datos....</span>
+<div class="col-md-12">
+  <div class="row col-md-11"  *ngIf='comunfiesta'>
+    <div class="col-xs-6 col-md-4" *ngFor="let comunid of comunfiesta">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{comunid.img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{comunid.Comunidad}}</h5>
+          <p class="card-text">{{comunid.Descripcion}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{comunid.Fiesta}}</li>
+          <li class="list-group-item">{{comunid.Comunidad}}</li>
+          <li class="list-group-item">{{comunid.Departamento}}</li>
+        </ul>
+      </div>
+        <br>
+      </div>
+      <br>
+    </div>
+  </div>
+  <span *ngIf='!comunfiesta' style="text-align:center">cargando datos....</span>
 </div>

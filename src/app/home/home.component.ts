@@ -9,6 +9,7 @@ import { PeticionesService } from '../services/peticiones.service';
 export class HomeComponent{
   public title = 'Fiestas patronales de hoy en Guatemala';
   public fiestas;
+  public contador = 0;
 
     constructor(
       private _peticionesService: PeticionesService

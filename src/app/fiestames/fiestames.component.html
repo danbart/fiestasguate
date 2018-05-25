@@ -3,6 +3,7 @@
     {{ title }}
   </h1>
   <br>
+  <div class="form-control">
   <select class="form-control" (change)="cambiarMes($event.target.value)" ng-model="mesfecha">
      <option>Seleccione un mes</option>
      <option value="2018-01-01">Enero</option>
@@ -18,25 +19,28 @@
      <option value="2018-11-01">Noviembre</option>
      <option value="2018-12-01">Diciembre</option>
     </select>
+  </div>
   <br>
   <br>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Fecha</th>
-        <th scope="col">Nombre Fiesta</th>
-        <th scope="col">Comunidad</th>
-        <th scope="col">IMG</th>
-      </tr>
-    </thead>
-    <tbody *ngIf='fiestas'>
-      <tr *ngFor="let fiesta of fiestas">
-        <th scope="row">{{fiesta.Fiesta}}</th>
-        <td>{{fiesta.Nombre_Fiestas}}</td>
-        <td>{{fiesta.Comunidad}}</td>
-        <td><img src="{{fiesta.img}}" alt="Smiley face" height="50" width="50"></td>
-      </tr>
-    </tbody>
-    <span *ngIf='!fiestas' tyle="text-align:center">cargarndo datos....</span>
-  </table>
+<div class="col-md-12">
+  <div class="row col-md-11" *ngIf='fiestas'>
+    <div class="col-xs-6 col-md-4" *ngFor="let fiesta of fiestas">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{fiesta.img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{fiesta.Comunidad}}</h5>
+          <p class="card-text">{{fiesta.Descripcion}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{fiesta.Fiesta}}</li>
+          <li class="list-group-item">{{fiesta.Comunidad}}</li>
+          <li class="list-group-item">{{fiesta.Departamento}}</li>
+        </ul>
+      </div>
+        <br>
+    </div>
+      <br>
+    </div>
+  </div>
+  <span *ngIf='!fiestas' style="text-align:center">cargando datos....</span>
 </div>
